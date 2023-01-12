@@ -1,0 +1,6 @@
+# auto delete
+
+pyrogram
+tgcrypto
+python-dotenv
+dnspython
