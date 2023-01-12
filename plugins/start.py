@@ -29,7 +29,7 @@ async def star_t(bot, message):
         btn = [[InlineKeyboardButton("Owner",url="https://t.me/MalluMoviesGroup3")]]
         reply_markup=InlineKeyboardMarkup(btn)
         await message.reply_text(text=f"__Hey 👋{message.from_user.mention},\n\nIm auto delete bot for this group.\n\nUp Time : {up_time}__",
-            reply_markup=reply_markup)
+)
     except Exception as e:
         logging.info(e) 
 
