@@ -26,33 +26,12 @@ def time_formatter(seconds: float) -> str:
 async def star_t(bot, message):
     try:
         up_time = time_formatter(time.time() - BOT_START_TIME)
-        btn = [[InlineKeyboardButton("Upgrade", callback_data="back")]]
-        reply_markup=InlineKeyboardMarkup(btn)
+        btn = InlineKeyboardMarkup([[InlineKeyboardButton("🎥 JOIN UPDATE CHANNEL 🎥", url="https://t.me/REQUSET_ACCEPT_BOT")]])
         await message.reply_text(text=f"__Hey 👋{message.from_user.mention},\n\nIm auto delete bot for this group.\n\nUp Time : {up_time}__",
-            reply_markup=reply_markup)
-    except Exception as e:
+            reply_markup=btn)
+        except Exception as e:
         logging.info(e) 
 
-@Client.on_message(filters.command('plan') & filters.private)
-async def plan(bot, message):
-    btn = [[
-        InlineKeyboardButton("Free Plan", callback_data="free"),
-        InlineKeyboardButton("Premium Plan", callback_data="premium")
-    ],[
-        InlineKeyboardButton("Close", callback_data="close")
-    ]]
-    reply_markup = InlineKeyboardMarkup(btn)
-    await message.reply_text(text="""**FREE PLAN**
-__Delete messages from users.
-Will not delete mesaages from another bots 
-Maximum deletion time - 30 minutes__
-
-**PREMIUM PLAN**
-__Delete all messages ( even messages from other bots ).
-Set delete interval upto 10 days.
-Plan Cost - Rs.39 / month.__""",
-    reply_markup=reply_markup)
-    
 @Client.on_callback_query()
 async def cb_handler(client: Client, query: CallbackQuery):
     if query.data == "close":
