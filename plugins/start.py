@@ -29,8 +29,6 @@ async def star_t(bot, message):
         btn = InlineKeyboardMarkup([[InlineKeyboardButton("🎥 JOIN UPDATE CHANNEL 🎥", url="https://t.me/REQUSET_ACCEPT_BOT")]])
         await message.reply_text(text=f"__Hey 👋{message.from_user.mention},\n\nIm auto delete bot for this group.\n\nUp Time : {up_time}__",
             reply_markup=btn)
-        except Exception as e:
-        logging.info(e) 
 
 @Client.on_callback_query()
 async def cb_handler(client: Client, query: CallbackQuery):
