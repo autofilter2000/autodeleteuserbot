@@ -26,63 +26,10 @@ def time_formatter(seconds: float) -> str:
 async def star_t(bot, message):
     try:
         up_time = time_formatter(time.time() - BOT_START_TIME)
-        btn = [[InlineKeyboardButton("OWNER", callback_data="back")]]
+        btn = [[InlineKeyboardButton("OWNER",url="https://t.me/Px1sellerrdp")]]
         reply_markup=InlineKeyboardMarkup(btn)
         await message.reply_text(text=f"__Hey 👋{message.from_user.mention},\n\nIm auto delete bot for this group.\n\nUp Time : {up_time}__",
             reply_markup=reply_markup)
     except Exception as e:
         logging.info(e) 
 
-@Client.on_message(filters.command('about') & filters.private)
-async def plan(bot, message):
-    btn = [[
-        InlineKeyboardButton("Owner", callback_data="free"),
-        InlineKeyboardButton("Developer", callback_data="premium")
-    ],[
-        InlineKeyboardButton("Close", callback_data="close")
-    ]]
-    reply_markup = InlineKeyboardMarkup(btn)
-    await message.reply_text(text=""**Hello I Am A Private Auto Message Delete Bot For More Details Contact My Developer**,
-    reply_markup=reply_markup)
-    
-@Client.on_callback_query()
-async def cb_handler(client: Client, query: CallbackQuery):
-    if query.data == "close":
-        await query.message.delete()
-    elif query.data == "free":
-        btn = [[
-            InlineKeyboardButton("Owner", url="https://t.me/+oJC1wBd6beA0ZTM1"),
-            InlineKeyboardButton("Back", callback_data="back")
-        ]]
-         reply_markup = InlineKeyboardMarkup(btn)
-         await query.message.edit_text(
-            text="Hello I Am A Private Auto Message Delete Bot For More Details Contact My Developer",
-            reply_markup=reply_markup)
-    elif query.data == "premium":
-        btn = [[
-            InlineKeyboardButton("Developer", url="https://t.me/sovel_jaison"),
-            InlineKeyboardButton("Back", callback_data="back")
-        ]]
-        reply_markup = InlineKeyboardMarkup(btn)
-        await query.message.edit_text(
-            text="Hello I Am A Private Auto Message Delete Bot For More Details Contact My Developer",
-            reply_markup=reply_markup)
-    elif query.data == "back":
-        btn = [[
-            InlineKeyboardButton("Free Plan", callback_data="free"),
-            InlineKeyboardButton("Premium Plan", callback_data="premium")
-        ],[
-            InlineKeyboardButton("Close", callback_data="close")
-        ]]
-        reply_markup = InlineKeyboardMarkup(btn)
-        await query.message.edit_text(text="""**FREE PLAN**
-__Delete messages from users.
-Will not delete mesaages from another bots 
-Maximum deletion time - 30 minutes__
-
-**PREMIUM PLAN**
-__Delete all messages ( even messages from other bots ).
-Set delete interval upto 10 days.
-Plan Cost - Rs.39 / month.__""",
-        reply_markup=reply_markup)
-        
