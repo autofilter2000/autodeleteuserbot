@@ -16,7 +16,7 @@ async def delete_(client, message):
     group_id = message.chat.id
     try:
         st = await client.get_chat_member(group_id, userid)
-        if st.status in [enums.ChatMemberStatus.ADMINISTRATOR, enums.ChatMemberStatus.OWNER] or message.from_user.id in Config.OWNER:
+        if st.status in [enums.ChatMemberStatus.OWNER] or message.from_user.id in Config.OWNER:
             print("You are Admin or Owner of this group")
             return
         else:
