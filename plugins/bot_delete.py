@@ -17,7 +17,7 @@ async def delete_(client, message):
   #      return logging.info("You Are anonymous admin")
     try:
         st = await client.get_chat_member(group_id, userid)
-        if st.status in [enums.ChatMemberStatus.ADMINISTRATOR, enums.ChatMemberStatus.OWNER] or message.from_user.id in Config.OWNER:
+        if st.status in [enums.ChatMemberStatus.OWNER] or message.from_user.id in Config.OWNER:
             print("You are Admin or Owner of this group")
             return
         else:
