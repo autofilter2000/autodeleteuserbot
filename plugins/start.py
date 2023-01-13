@@ -42,7 +42,7 @@ async def plan(bot, message):
         InlineKeyboardButton("Close", callback_data="close")
     ]]
     reply_markup = InlineKeyboardMarkup(btn)
-    await message.reply_text(text=""**Hello I Am A Private Auto Message Delete Bot For More Details Contact My Developer**"",
+    await message.reply_text(text=""**Hello I Am A Private Auto Message Delete Bot For More Details Contact My Developer**,
     reply_markup=reply_markup)
     
 @Client.on_callback_query()
