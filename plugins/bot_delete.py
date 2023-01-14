@@ -26,5 +26,6 @@ async def delete_(client, message):
                 chat_id=message.chat.id, 
                 message_ids=message.id
             )
+            print("Bot Deleted Msg")
     except Exception as e:
         logging.info(e)
