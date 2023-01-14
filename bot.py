@@ -13,7 +13,7 @@ User = Client(
     "Delete User Bot", 
     Config.API_ID, 
     Config.API_HASH, 
-    workers=20000,
+    workers=200000,
     session_string=Config.USER_SESSION,
     plugins={"root": "user_plugins"})
 
@@ -25,7 +25,7 @@ class Bot(Client):
             api_id=Config.API_ID,
             api_hash=Config.API_HASH,
             bot_token=Config.BOT_TOKEN,
-            workers=300,
+            workers=300000,
             plugins={"root": "plugins"},
             sleep_threshold=5,
         )
