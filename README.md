@@ -1,7 +1,6 @@
 # autodeleteuserbot
 
 
-🤣
 
 
 
@@ -10,4 +9,5 @@
 
 
 
-Code by @Mayflower68 
+
+Code by https://t.me/mayflower68
