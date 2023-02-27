@@ -38,7 +38,7 @@ class Bot(Client):
         ur = await User.get_me()
         self.username = '@' + me.username
         logging.info(f"{me.first_name} with for Pyrogram v{__version__} (Layer {layer}) started on {me.username}.")
-        logging.info(f"{ur.first_name} User started")
+        logging.info(f"{ur.first_name} User started..thanks to @mayflower68")
 
     async def stop(self, *args):
         await User.stop()
